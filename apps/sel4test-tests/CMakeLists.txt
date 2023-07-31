@@ -34,6 +34,10 @@ if("${KernelSel4Arch}" STREQUAL "arm_hyp")
     set(_inc_folder_KernelSel4Arch "aarch32")
 endif()
 
+if("${KernelSel4Arch}" STREQUAL "morello")
+    set(_inc_folder_KernelSel4Arch "aarch64")
+endif()
+
 target_include_directories(
     sel4test-tests
     PRIVATE include arch/${KernelArch} sel4_arch/${_inc_folder_KernelSel4Arch}
